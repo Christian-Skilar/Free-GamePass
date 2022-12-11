@@ -1,0 +1,24 @@
+html {
+    /* background-image: linear-gradient(to right, #252526 , #0D0D0D); */
+    background: #000;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    font-family: 'Poppins', sans-serif;;
+    margin: 0;
+    padding: 0;
+    background: rgb(94,94,94);
+    background: linear-gradient(90deg, rgba(94,94,94,0.30017944677871145) 0%, rgba(5,5,5,1) 10%, rgba(29,29,29,1) 50%, rgba(5,5,5,1) 74%, rgba(111,217,4,0.07328869047619047) 100%);
+  }
+
+@font-face {
+    font-family: 'Aquire';
+    src:  url('./fonts/Aquire.otf') format('otf')
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src:  url('./fonts//Poppins-Light.ttf') format('ttf')
+  }

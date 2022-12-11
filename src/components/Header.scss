@@ -1,0 +1,191 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../assets/banner3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50vh;
+        width: 70vw;
+        backdrop-filter: blur(6px) saturate(130%);
+        -webkit-backdrop-filter: blur(6px) saturate(130%);
+        background-color: rgba(17, 25, 40, 0.07);
+        border-radius: 12px;
+        box-shadow:
+        2px 2px 1.6px rgba(0, 0, 0, 0.038),
+        4.5px 4.5px 3.6px rgba(0, 0, 0, 0.056),
+        7.9px 7.9px 6.3px rgba(0, 0, 0, 0.069),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.08),
+        19.3px 19.3px 15.5px rgba(0, 0, 0, 0.091),
+        30.1px 30.1px 24.1px rgba(0, 0, 0, 0.104),
+        50px 50px 40px rgba(0, 0, 0, 0.122),
+        100px 100px 80px rgba(0, 0, 0, 0.16)
+      ;
+      
+
+    }
+
+    h1 {
+        font-size: 8em;
+        margin: 0;
+        font-family: 'Aquire';
+        background: -webkit-linear-gradient(#6FD904, #107C10);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+        margin: 20px 10px 10px 10px ;
+        font-family: Aquire;
+    }
+
+    .border-top {
+        border-top: 2px solid #fff;
+        height: 0;
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    $bg:#62c203;
+    $fg: #fff;
+    $border-width: 3px;
+    $corner-size: 15px;
+    $dur: .3s;
+
+    .corner-button {
+        cursor: pointer;
+        background: #62c203;
+        text-decoration: none;
+        margin-top: 30px;
+        border: $border-width solid currentColor;
+        padding: 15px 70px;
+        font-size: 20px;
+        color: $fg;
+        position: relative;
+        transition: color $dur;
+        z-index: 1;
+        
+        &:hover {
+          color: #fff;
+          &::before { width: 0; }
+          &::after { height: 0; }
+        }
+        
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          background: $bg;
+          z-index: -1;
+          transition: all $dur;
+        }
+        //the 101% is because of a pixel rounding issue in firefox
+        &::before {
+          width: calc(100% - #{$corner-size});
+          height: calc(101% + #{$border-width * 2});
+          top: -$border-width;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &::after {
+          height: calc(100% - #{$corner-size});
+          width: calc(100% + #{$border-width * 2});
+          left: -$border-width;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+}
+
+//
+// ---------- MEDIA ----------
+//
+@media only screen and (max-width: 1000px) {
+    .header {
+
+    div {
+        height: 60vh;
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 100px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .border-top {
+        border-top: 1px solid #fff;
+        width: 300px;
+    }
+
+    .corner-button {
+        margin-top: 30px;
+        padding: 10px 50px;
+        font-size:18px;
+      }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .border-top {
+        width: 200px;
+    }
+
+    .corner-button {
+        margin-top: 30px;
+        padding: 5px 30px;
+        font-size: 14px;
+      }
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .header {
+
+    div {
+        height: 50vh;
+        width: 90vw;
+    }
+
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    .border-top {
+        width: 150px;
+    }
+
+    .corner-button {
+        margin-top: 30px;
+        padding: 5px 30px;
+        font-size: 12px;
+      }
+    }
+}
